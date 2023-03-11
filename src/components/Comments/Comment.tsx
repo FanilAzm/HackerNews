@@ -30,7 +30,11 @@ const Comment: FC<PropsType> = ({ comment }) => {
 		<div className={styles.comment}>
 			<div onClick={handleClick}>
 				{hasChild && <ArrowDropDownIcon className={styles.arrow} />}
-				<p className={styles.text}>{comment?.text}</p>
+				{comment?.deleted ? (
+					<p className={styles.text}>Sorry, this comment has been deleted</p>
+				) : (
+					<p className={styles.text}>{comment?.text}</p>
+				)}
 				<span className={styles.author}>
 					<div className={styles.alignBottom}>
 						<Person2Icon />

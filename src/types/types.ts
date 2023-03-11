@@ -9,4 +9,5 @@ export interface DataType {
 	descendants: number;
 	score: 1;
 	kids?: number[] | undefined;
+	deleted?: boolean;
 }
