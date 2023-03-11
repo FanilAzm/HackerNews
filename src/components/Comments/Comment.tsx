@@ -3,8 +3,8 @@ import Person2Icon from '@mui/icons-material/Person2';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { DataType } from '../../types/types';
 import styles from './Comments.module.css';
-import SubCommentsList from '../SubCommentsList/SubCommentsList';
 import { useEffect } from 'react';
+import CommentsList from './CommentsList';
 
 type PropsType = {
 	comment?: DataType;
@@ -38,7 +38,7 @@ const Comment: FC<PropsType> = ({ comment }) => {
 					</div>
 				</span>
 			</div>
-			{isClicked && <SubCommentsList comments={comment?.kids} />}
+			{isClicked && <CommentsList comments={comment?.kids} child={hasChild} />}
 		</div>
 	);
 };

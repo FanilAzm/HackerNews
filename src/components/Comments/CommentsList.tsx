@@ -6,9 +6,10 @@ import Comment from './Comment';
 
 type PropsType = {
 	comments?: number[] | undefined;
+	child?: boolean;
 };
 
-const CommentsList: FC<PropsType> = ({ comments }) => {
+const CommentsList: FC<PropsType> = ({ comments, child }) => {
 	const [commentsList, setCommentsList] = useState<DataType[]>([]);
 
 	useEffect(() => {
@@ -30,13 +31,13 @@ const CommentsList: FC<PropsType> = ({ comments }) => {
 
 	return (
 		<div>
-			<h4>Comments</h4>
+			{!child && <h4>Comments</h4>}
 			{commentsList?.length ? (
-				<>
+				<div style={child ? { marginLeft: '40px' } : {}}>
 					{commentsList?.map((item, index) => {
 						return <Comment key={index} comment={item} />;
 					})}
-				</>
+				</div>
 			) : (
 				<Box sx={{ display: 'flex', justifyContent: 'center' }}>
 					<CircularProgress />
