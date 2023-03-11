@@ -1,0 +1,33 @@
+.comment {
+	position: relative;
+	margin-left: 0px;
+}
+
+.subComment {
+	margin-left: 40px;
+}
+
+.arrow {
+	position: absolute;
+	left: -10px;
+	top: 0;
+}
+
+.text {
+	margin-left: 15px;
+	margin-bottom: 6px;
+}
+
+.author {
+	font-size: 14px;
+	color: #aaaaaa;
+}
+
+.alignBottom {
+	display: flex;
+	align-items: flex-end;
+}
+
+.alignBottom span {
+	margin-left: 5px;
+}
